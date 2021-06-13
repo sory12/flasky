@@ -3,7 +3,7 @@ from flask import render_template, redirect, url_for, flash, abort, request, mak
 from . import main
 from .forms import EditProfileForm, PostForm, EditProfileAdminForm
 from .. import db
-from ..models import User, Role, Post, Permission, current_app
+from ..models import User, Role, Post, Permission, current_app, Comment
 from ..decorators import admin_required, permission_required
 from flask_login import current_user, login_required
 from flask_sqlalchemy import get_debug_queries
