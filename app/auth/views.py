@@ -1,5 +1,5 @@
 from flask import render_template, redirect, request, url_for, flash
-from flask_login import login_user, login_required, logout_user,current_user
+from flask_login import login_user, login_required, logout_user, current_user
 from . import auth
 from ..models import User, db
 from .forms import LoginForm
@@ -61,10 +61,10 @@ def before_request():
     if current_user.is_authenticated:
         current_user.ping()
         if not current_user.confirmed \
-            and not current_user.confirmed \
-            and request.blueprint != 'auth' \
-            and request.endpoint != 'static':
-        return redirect(url_for('auth.unconfirmed'))
+                and not current_user.confirmed \
+                and request.blueprint != 'auth' \
+                and request.endpoint != 'static':
+            return redirect(url_for('auth.unconfirmed'))
 
 
 @auth.route('/unconfirmed')
