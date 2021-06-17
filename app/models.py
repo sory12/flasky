@@ -235,7 +235,7 @@ class Post(db.Model):
         body = json_post.get('body')
         if body is None or body == '':
             raise ValidationError('post does not have a body')
-        return Post(body=body
+        return Post(body=body)
 
     @staticmethod
     def on_changed_body(target, value, oldvalue, initiator):

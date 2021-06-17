@@ -3,7 +3,6 @@ from wtforms.validators import DataRequired, Length, Email, Regexp
 from wtforms import ValidationError
 from ..models import User, Role
 from flask_wtf import FlaskForm
-from flask_pagedown.fields import PageDownField
 
 
 class PostForm(FlaskForm):

@@ -49,6 +49,3 @@ def test():
         COV.html_report(directory=covdir)
         print('HTML version: file://%s/index.html' % covdir)
         COV.erase()
-
-
-

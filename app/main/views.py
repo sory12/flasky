@@ -11,8 +11,7 @@ from flask_sqlalchemy import get_debug_queries
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-    form = NameForm()
-    show_followed = False
+    form = PostForm()
     if current_user.can(Permission.WRITE_ARTICLES) and form.validate_on_submit():
         post = Post(body=form.body.data, author=current_user._get_current_object())
         db.session.add(post)
